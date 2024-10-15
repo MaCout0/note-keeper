@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListagemCategoria } from '../models/categorias.models';
-import { NgForOf } from '@angular/common';
+import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,7 +13,16 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-listagem-categorias',
   standalone: true,
-  imports: [NgForOf, RouterLink, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule],
+  imports: [
+    NgIf, 
+    NgForOf, 
+    RouterLink, 
+    AsyncPipe,
+    MatCardModule, 
+    MatButtonModule, 
+    MatIconModule, 
+    MatTooltipModule
+  ],
   templateUrl: './listagem-categorias.component.html',
   styleUrl: './listagem-categorias.component.scss'
 })

@@ -1,8 +1,15 @@
 <main class="container-fluid px-3 my-4">
-    <h1 class="fs-2">Listagem de Categorias</h1>
+    <h2 class="fs-2">Listagem de Categorias</h2>
+
+    <section aria-label="Opções" class="row justify-content-center justify-content-lg-start g-1">
+        <a mat-flat-button class="col-md-6 col-lg-4 col-xxl-2 fs-6 py-4" [routerLink]="['/categorias', 'cadastrar']">
+            <mat-icon>bookmark_add</mat-icon>Cadastrar
+        </a>
+    </section>
+
     <hr />
 
-    <div *ngFor="categorias$ | async as itens" class="row g-3 mt-2">
+    <div *ngIf="categorias$ | async as itens" class="row g-3 mt-2">
         <div *ngFor="let item of itens" class="col-lg-4 col-xxl-4">
             <mat-card class="mat-mdc-elevation-specific mat-elevation-z5 h-100">
                 <mat-card-header>

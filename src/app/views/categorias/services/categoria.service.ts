@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListagemCategoria } from '../models/categorias.models';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriaService {
   
-  private readonly url = '&{environment.API_URL}/categorias';
+  private readonly url = `${environment.API_URL}/categorias`;
 
   constructor(private http: HttpClient) { }
 
